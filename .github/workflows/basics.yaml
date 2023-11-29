@@ -1,1 +1,26 @@
+name: my first basic workflow
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: echo text
+        run: echo "hello world"
+        shell: bash
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo blabla
+        run: echo "bla bla"
+        shell: bash
